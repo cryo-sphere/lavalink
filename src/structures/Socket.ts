@@ -280,17 +280,22 @@ export class Socket {
 		if (payload.type === "TrackStuckEvent") {
 			this.manager.emit("trackStuck", { player, track, payload });
 			player.stop();
+			player.playing = false;
+			player.paused = false;
 			return;
 		}
 
 		if (payload.type === "TrackExceptionEvent") {
 			this.manager.emit("trackError", { player, track, payload });
 			player.stop();
+			player.playing = false;
+			player.paused = false;
 			return;
 		}
 
 		if (payload.type === "WebSocketClosedEvent") {
 			this.manager.emit("playerConnectionClosed", { player, payload });
+			player.state = "DISCONNECTED";
 			return;
 		}
 	}

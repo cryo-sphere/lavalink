@@ -66,6 +66,7 @@ export class Queue {
 		if (!this.next.length) {
 			this.reset();
 			this.player.manager.emit("queueEmpty", this.player);
+			this.player.playing = false;
 			return;
 		}
 
