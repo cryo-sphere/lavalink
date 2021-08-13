@@ -29,5 +29,9 @@
 		"@lavaclient/types": "^2.0.8",
 		"axios": "^0.21.1",
 		"ws": "^8.1.0"
-	}
+	},
+	"repository": {
+		"url": "https://github.com/stereo-bot/lavalink"
+	},
+	"homepage": "https://github.com/stereo-bot/lavalink#readme"
 }
