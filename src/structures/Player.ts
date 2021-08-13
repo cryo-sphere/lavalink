@@ -208,32 +208,6 @@ export class Player {
 		return this;
 	}
 
-	/** Skips the given amount of songs in the queue
-	 * @param amount defaults to 1
-	 */
-	public skip(amount = 1): this {
-		if (amount < 0) this.error("skip", "Amount cannot be small than 0");
-
-		if (this.queue.repeatSong) return this.seek(0);
-		if (this.queue.repeatQueue) {
-			if (this.queue.current)
-				this.queue.next.push(this.queue.current, ...this.queue.next.splice(0, amount - 1));
-			else this.queue.next.push(...this.queue.next.splice(0, amount - 1));
-
-			this.queue.nextSong(true);
-
-			return this;
-		}
-
-		if (this.queue.current)
-			this.queue.previous.push(this.queue.current, ...this.queue.next.splice(0, amount - 1));
-		else this.queue.previous.push(...this.queue.next.splice(0, amount - 1));
-
-		this.queue.nextSong(true);
-
-		return this;
-	}
-
 	/** Disconnects from the voice channel */
 	public disconnect(): void {
 		if (!this.channels.voice) return;
