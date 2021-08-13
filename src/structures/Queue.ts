@@ -48,16 +48,18 @@ export class Queue {
 
 	/**
 	 * Starts playing a new track in the queue
-	 * @param toPrevious
+	 * @param skip
 	 */
-	public nextSong(toPrevious = true): void {
+	public nextSong(skip = 1): void {
 		if (this.repeatSong && this.current) {
 			this.player.play();
 			return;
 		}
 
 		if (this.repeatQueue && this.current) {
-			if (toPrevious) this.next.push(this.current as Track);
+			this.next.push(this.current);
+			if (skip > 1) this.remove(0, skip - 1);
+
 			this.current = (this.next.shift() as LoadedTrack) ?? null;
 			this.player.play();
 			return;
@@ -70,7 +72,9 @@ export class Queue {
 			return;
 		}
 
-		if (this.current && toPrevious) this.previous.push(this.current);
+		if (this.current) this.previous.push(this.current);
+		if (skip > 1) this.remove(0, skip - 1);
+
 		this.current = (this.next.shift() as LoadedTrack) ?? null;
 		this.player.play();
 	}
@@ -130,10 +134,16 @@ export class Queue {
 			else if (from >= this.next.length)
 				throw new RangeError(`\`From\` can not be bigger than ${this.next.length}.`);
 
-			return this.next.splice(from, to - from);
+			const tracks = this.next.splice(from, to - from);
+			if (this.repeatQueue || this.repeatSong) this.next.push(...tracks);
+			else this.previous.push(...tracks);
+			return tracks;
 		}
 
-		return this.next.splice(from, 1);
+		const tracks = this.next.splice(from, 1);
+		if (this.repeatQueue || this.repeatSong) this.next.push(...tracks);
+		else this.previous.push(...tracks);
+		return tracks;
 	}
 
 	/** Gets the total duration of the queue */

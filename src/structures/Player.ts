@@ -212,24 +212,29 @@ export class Player {
 	 * @param amount defaults to 1
 	 */
 	public skip(amount = 1): this {
-		if (amount > this.queue.next.length)
-			this.error("skip", "Amount cannot be greater than the queue length");
-		if (amount < 0) this.error("skip", "Amount cannot be small than 0");
+		this.queue.nextSong(amount);
 
-		if (this.queue.repeatSong) return this.seek(0);
-		if (this.queue.repeatQueue) {
-			if (this.queue.current)
-				this.queue.next.push(this.queue.current, ...this.queue.next.slice(0, amount - 1));
-			else this.queue.next.push(...this.queue.next.slice(0, amount - 1));
-			this.queue.nextSong(false);
+		// if (amount > this.queue.next.length)
+		// 	this.error("skip", "Amount cannot be greater than the queue length");
+		// if (amount < 0) this.error("skip", "Amount cannot be small than 0");
 
-			return this;
-		}
+		// if (this.queue.repeatSong) return this.seek(0);
+		// if (this.queue.repeatQueue) {
+		// 	if (this.queue.current)
+		// 		this.queue.next.push(this.queue.current, ...this.queue.next.slice(0, amount - 1));
+		// 	else this.queue.next.push(...this.queue.next.slice(0, amount - 1));
+		// 	this.queue.nextSong(false);
 
-		if (this.queue.current)
-			this.queue.previous.push(this.queue.current, ...this.queue.next.slice(0, amount - 1));
-		else this.queue.previous.push(...this.queue.next.slice(0, amount - 1));
-		this.queue.nextSong(false);
+		// 	this.queue.remove(0, amount - 1);
+		// 	if (this.queue.current) this.queue.previous.splice(amount - 1, 0, this.queue.current);
+
+		// 	return this;
+		// }
+
+		// if (this.queue.current)
+		// 	this.queue.previous.push(this.queue.current, ...this.queue.next.slice(0, amount - 1));
+		// else this.queue.previous.push(...this.queue.next.slice(0, amount - 1));
+		// this.queue.nextSong(false);
 
 		return this;
 	}
