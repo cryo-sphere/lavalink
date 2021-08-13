@@ -187,7 +187,7 @@ export class Manager extends EventEmitter {
 		if (!player) return false;
 
 		player.destroy();
-		return this.players.delete(id);
+		return true;
 	}
 
 	/**

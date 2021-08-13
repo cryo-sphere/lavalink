@@ -244,6 +244,7 @@ export class Player {
 			},
 		});
 
+		this.channels.voice = null;
 		this.state = "DISCONNECTED";
 		this.pause(true);
 	}
@@ -268,10 +269,13 @@ export class Player {
 
 	/** Destroys the player */
 	public destroy(): void {
-		this.socket.send({ data: { op: "destroy", guildId: this.guild } });
+		this.disconnect();
+
+		this.socket.send({ priority: true, data: { op: "destroy", guildId: this.guild } });
 		this.state = "DESTROYED";
 
 		this.manager.emit("playerDestroy", this);
+		this.manager.players.delete(this.guild);
 	}
 
 	/** Sets the player voice channel
