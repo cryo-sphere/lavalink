@@ -10,6 +10,7 @@ import {
 	SearchResult as LavalinkSearchResult,
 	TrackExceptionEvent,
 	WebSocketClosedEvent,
+	TrackEndEvent,
 } from "@lavaclient/types";
 import { Utils } from "./Utils";
 
@@ -334,6 +335,19 @@ export interface Manager {
 			track,
 			payload,
 		}: TrackEventParameters & { payload: TrackStartEvent }) => void
+	): this;
+
+	/**
+	 * Emitted when a new track ended
+	 * @event Manager#trackEnd
+	 */
+	on(
+		event: "trackEnd",
+		listener: ({
+			player,
+			track,
+			payload,
+		}: TrackEventParameters & { payload: TrackEndEvent }) => void
 	): this;
 
 	/**
