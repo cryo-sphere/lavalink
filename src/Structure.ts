@@ -1,8 +1,8 @@
-import Filters from "./structures/Filters";
+import { Filters } from "./structures/Filters";
 import { Player } from "./structures/Player";
 import { Queue } from "./structures/Queue";
 import { Socket } from "./structures/Socket";
-import Track from "./structures/Track";
+import { Track } from "./structures/Track";
 
 /** Gets or extends structures to extend the built in, or already extended, classes to add more functionality. */
 export abstract class Structure {
