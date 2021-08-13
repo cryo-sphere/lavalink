@@ -2,6 +2,8 @@
 
 > An easy-to-use package for interacting with Lavalink with built-in Spotify and Deezer support (plugins must be added to the plugins array in-order to work). based off [Erela.js](https://github.com/MenuDocs/erela.js) & [Lavaclient](https://github.com/lavaclient)
 
+- [Documentation](https://lavalink.stereo-bot.tk)
+
 ## Install
 
 ```sh
