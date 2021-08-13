@@ -48,18 +48,16 @@ export class Queue {
 
 	/**
 	 * Starts playing a new track in the queue
-	 * @param skip
+	 * @param isSkipping
 	 */
-	public nextSong(skip = 1): void {
+	public nextSong(isSkipping = false): void {
 		if (this.repeatSong && this.current) {
 			this.player.play();
 			return;
 		}
 
 		if (this.repeatQueue && this.current) {
-			this.next.push(this.current);
-			if (skip > 1) this.remove(0, skip - 1);
-
+			if (!isSkipping) this.next.push(this.current);
 			this.current = (this.next.shift() as LoadedTrack) ?? null;
 			this.player.play();
 			return;
@@ -72,9 +70,7 @@ export class Queue {
 			return;
 		}
 
-		if (this.current) this.previous.push(this.current);
-		if (skip > 1) this.remove(0, skip - 1);
-
+		if (this.current && !isSkipping) this.previous.push(this.current);
 		this.current = (this.next.shift() as LoadedTrack) ?? null;
 		this.player.play();
 	}
