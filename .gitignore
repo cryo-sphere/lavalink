@@ -2,7 +2,6 @@ node_modules/
 dist/
 
 docs/
-guides/
 
 yarn.lock
 yarn-error.log
