@@ -25,7 +25,7 @@ jobs:
           rm -rfv out/*.html
 
           echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
-          rsync -vaI LICENSE.md out/
+          rsync -vaI LICENSE out/
           rsync -vaI README.md out/
           rsync -vaI docs/ out/
 
