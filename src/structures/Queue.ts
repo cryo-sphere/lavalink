@@ -85,6 +85,7 @@ export class Queue {
 	 * Adds track(s) to the queue
 	 * @param tracks
 	 */
+	public add(...tracks: Track[]): void;
 	public add(...tracks: (Track | number)[]): void {
 		if (typeof tracks[0] === "number") {
 			const offset = tracks.shift() as number;

@@ -206,14 +206,13 @@ export class Socket {
 	 * @private
 	 */
 	private configureResuming(): void {
-		if (!this.manager.options.resume) return;
 		this.resumeKey = this.manager.options.resume?.key ?? Math.random().toString(32);
 
 		return this.send({
 			priority: true,
 			data: {
 				op: "configureResuming",
-				timeout: this.manager.options.resume.timeout ?? 6e4,
+				timeout: this.manager.options.resume?.timeout ?? 6e4,
 				key: this.resumeKey,
 			},
 		});
