@@ -1,5 +1,5 @@
 {
-	"name": "@stereo/lavalink",
+	"name": "@stereo-bot/lavalink",
 	"version": "1.0.0",
 	"description": "An easy-to-use package for interacting with Lavalink based off Erela.js & Lavaclient",
 	"main": "dist/index.js",
