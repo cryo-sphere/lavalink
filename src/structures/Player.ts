@@ -1,4 +1,3 @@
-import { EqualizerBand } from "@lavaclient/types";
 import { Structure } from "../Structure";
 import { Filters } from "./Filters";
 import { Manager, SearchResult } from "./Manager";
@@ -103,51 +102,6 @@ export class Player {
 	 */
 	public search(query: string, requester: string, type?: "sc" | "yt"): Promise<SearchResult> {
 		return this.manager.search(query, requester, type);
-	}
-
-	/**
-	 * Sets the players equalizer band on-top of the existing ones.
-	 * When using [this lavalink](https://github.com/melike2d/lavalink) please use player.filters instead
-	 * @param bands
-	 */
-	public setEq(...bands: EqualizerBand[]): this {
-		if (
-			!bands.length ||
-			!bands.every((band) => JSON.stringify(Object.keys(band).sort()) === '["band","gain"]')
-		)
-			this.error(
-				"setEq",
-				"Bands must be a non-empty object array containing 'band' and 'gain' properties."
-			);
-
-		for (const { band, gain } of bands) this.bands[band] = gain;
-
-		this.socket.send({
-			data: {
-				op: "equalizer",
-				guildId: this.guild,
-				bands: this.bands.map((gain, band) => ({ band, gain })),
-			},
-		});
-
-		return this;
-	}
-
-	/** Clears the equalizer bands.
-	 * 	When using [this lavalink](https://github.com/melike2d/lavalink) please use player.filters instead
-	 */
-	public clearEq(): this {
-		this.bands = new Array(15).fill(0);
-
-		this.socket.send({
-			data: {
-				op: "equalizer",
-				guildId: this.guild,
-				bands: this.bands.map((gain, band) => ({ band, gain })),
-			},
-		});
-
-		return this;
 	}
 
 	public setVolume(volume: number): this {
