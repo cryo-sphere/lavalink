@@ -19,8 +19,6 @@ export class Track {
 	public isStream?: boolean;
 	/** If the track is seekable or not. */
 	public isSeekable?: boolean;
-	/** The thumbnail of the track. */
-	public thumbnail?: string | null;
 	/** The id of the user that requested the track. */
 	public requester: string;
 
@@ -41,8 +39,6 @@ export class Track {
 			throw new RangeError("uri must be a non-empty string");
 		if ("track" in data && typeof data.track !== "string")
 			throw new RangeError("track must be a non-empty string");
-		if ("thumbnail" in data && typeof data.thumbnail !== "string")
-			throw new RangeError("thumbnail must be a non-empty string");
 		if ("identifier" in data && typeof data.identifier !== "string")
 			throw new RangeError("identifier must be a non-empty string");
 		if ("externalUri" in data && typeof data.externalUri !== "string")
@@ -54,7 +50,6 @@ export class Track {
 		this.track = data.track ?? undefined;
 		this.uri = data.uri ?? undefined;
 		this.title = data.title ?? undefined;
-		this.thumbnail = data.thumbnail ?? undefined;
 		this.isStream = data.isStream ?? undefined;
 		this.isSeekable = data.isSeekable ?? undefined;
 		this.identifier = data.identifier ?? undefined;
@@ -103,7 +98,6 @@ export class Track {
 		this.identifier = track.identifier;
 		this.isSeekable = track.isSeekable;
 		this.isStream = track.isStream;
-		this.thumbnail = track.thumbnail;
 		this.title = track.title;
 		this.track = track.track;
 		this.uri = track.uri;
@@ -142,8 +136,6 @@ export interface LoadedTrack {
 	readonly isStream: boolean;
 	/** If the track is a seekable or not. */
 	readonly isSeekable: boolean;
-	/** The thumbnail of the track. */
-	readonly thumbnail: string | null;
 	/** The id of the user that requested the track. */
 	readonly requester: string;
 	/** Displays the track thumbnail with optional size. */

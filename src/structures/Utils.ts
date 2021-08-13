@@ -78,6 +78,7 @@ export abstract class Utils {
 		const options: Partial<LoadedTrack> = {
 			requester,
 			...track.info,
+			duration: track.info.length,
 			track: track.track,
 		};
 
