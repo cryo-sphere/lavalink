@@ -338,7 +338,7 @@ export interface Manager {
 	): this;
 
 	/**
-	 * Emitted when a new track ended
+	 * Emitted when a new track ends
 	 * @event Manager#trackEnd
 	 */
 	on(
