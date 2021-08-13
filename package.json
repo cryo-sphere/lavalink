@@ -1,6 +1,6 @@
 {
 	"name": "@stereo-bot/lavalink",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "An easy-to-use package for interacting with Lavalink based off Erela.js & Lavaclient",
 	"main": "dist/index.js",
 	"author": "DaanGamesDG <daan@daangamesdg.wtf>",
