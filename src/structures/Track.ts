@@ -1,6 +1,6 @@
 import { Manager } from "./Manager";
 
-export default class Track {
+export class Track {
 	/** The base64 encoded track. */
 	public track?: string;
 	/** The title of the track */

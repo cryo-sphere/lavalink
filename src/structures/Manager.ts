@@ -4,7 +4,7 @@ import { Plugin } from "./Plugin";
 import { Structure } from "../Structure";
 import WebSocket from "ws";
 import { Player, VoiceOptions } from "./Player";
-import Track from "./Track";
+import { Track } from "./Track";
 import {
 	TrackStartEvent,
 	SearchResult as LavalinkSearchResult,

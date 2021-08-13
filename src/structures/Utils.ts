@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { Track as LavalinkTrack } from "@lavaclient/types";
-import Track, { LoadedTrack } from "./Track";
+import { LoadedTrack, Track } from "./Track";
 import { Structure } from "../Structure";
 
 /** The Utils class is a toolbox full of useful functions */

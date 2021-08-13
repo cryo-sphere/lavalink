@@ -1,6 +1,6 @@
 import { EqualizerBand } from "@lavaclient/types";
 import { Structure } from "../Structure";
-import Filters from "./Filters";
+import { Filters } from "./Filters";
 import { Manager, SearchResult } from "./Manager";
 import { Queue } from "./Queue";
 import { Socket } from "./Socket";

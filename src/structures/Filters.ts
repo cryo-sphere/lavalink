@@ -1,7 +1,7 @@
 import { FilterData } from "@lavaclient/types";
 import { Player } from "./Player";
 
-export default class Filters {
+export class Filters {
 	/**
 	 * The default filters
 	 */
@@ -39,7 +39,7 @@ export default class Filters {
 	}
 }
 
-type Filter = keyof typeof defaults | Partial<FilterData> | null;
+export type Filter = keyof typeof defaults | Partial<FilterData> | null;
 
 const defaultBassboosts = {
 	bassboostLow: {

@@ -2,7 +2,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { Manager, SearchFunction, SearchResult } from "../structures/Manager";
 import { Plugin } from "../structures/Plugin";
-import Track from "../structures/Track";
+import { Track } from "../structures/Track";
 import { Structure } from "../Structure";
 
 export class Spotify extends Plugin {

@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { Structure } from "../Structure";
 import { Manager, SearchFunction, SearchResult } from "../structures/Manager";
 import { Plugin } from "../structures/Plugin";
-import Track from "../structures/Track";
+import { Track } from "../structures/Track";
 
 export class Deezer extends Plugin {
 	private readonly axiosOptions: AxiosRequestConfig;

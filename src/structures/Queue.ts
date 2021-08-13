@@ -1,5 +1,5 @@
 import { Player } from "./Player";
-import Track, { LoadedTrack } from "./Track";
+import { LoadedTrack, Track } from "./Track";
 
 /**
  * The player's queue, the `current` property is the track playing the guild
