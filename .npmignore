@@ -1,0 +1,10 @@
+.eslintignore
+.eslintrc.json
+.gitignore
+.npmignore
+
+typedoc.json
+tsconfig.json
+
+.github/
+src/
