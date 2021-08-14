@@ -3,6 +3,7 @@ import { Filters } from "./Filters";
 import { Manager, SearchResult } from "./Manager";
 import { Queue } from "./Queue";
 import { Socket } from "./Socket";
+import { LoadedTrack } from "./Track";
 import { Utils } from "./Utils";
 
 export class Player {
@@ -104,6 +105,10 @@ export class Player {
 		return this.manager.search(query, requester, type);
 	}
 
+	/**
+	 * Changes the player volume
+	 * @param volume
+	 */
 	public setVolume(volume: number): this {
 		if (typeof volume !== "number" || volume > 1000 || volume < 1)
 			this.error("id", "volume must be between 1 and 1000");
@@ -112,9 +117,44 @@ export class Player {
 		return this;
 	}
 
+	/**
+	 * Stops the player
+	 */
 	public stop(): this {
 		this.socket.send({ data: { op: "stop", guildId: this.guild } });
 		this.playing = false;
+		return this;
+	}
+
+	/**
+	 * skips an amount of tracks
+	 * @param amount default = 1
+	 */
+	public skip(amount = 1): this {
+		if (typeof amount !== "number") this.error("skip", "amount is not a number");
+		if (!this.queue.current) return this;
+		if (this.queue.repeatSong) return this.seek(0);
+
+		if (amount === 1) {
+			this.queue.nextSong();
+			return this;
+		}
+
+		this.stop();
+		if (!this.queue.repeatQueue && amount > this.queue.size) {
+			this.queue.reset();
+			this.manager.emit("queueEmpty", this);
+			return this;
+		}
+
+		this.queue[this.queue.repeatQueue ? "next" : "previous"].push(this.queue.current);
+		this.queue[this.queue.repeatQueue ? "next" : "previous"].push(
+			...this.queue.next.splice(0, amount - 1)
+		);
+
+		this.queue.current = this.queue.next.shift() as LoadedTrack;
+		this.play();
+
 		return this;
 	}
 
@@ -227,7 +267,7 @@ export class Player {
 	}
 
 	private error(id: string, message: string): void {
-		throw new RangeError(`${this.guild} => ${id}(): ${message}`);
+		throw new Error(`${this.guild} => ${id}(): ${message}`);
 	}
 }
 

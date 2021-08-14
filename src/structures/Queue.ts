@@ -122,6 +122,12 @@ export class Queue {
 	 */
 	public remove(from: number, to: number): Track[];
 	public remove(from = 0, to?: number): Track[] {
+		if (!this.size) return [];
+		if (this.repeatSong) {
+			this.player.seek(0);
+			return this.current ? [this.current] : [];
+		}
+
 		if (typeof to !== "undefined") {
 			if (isNaN(Number(from))) throw new RangeError("Invalid `from` parameter provided");
 			else if (isNaN(Number(to))) throw new RangeError("Invalid `to` parameter provided");
@@ -130,13 +136,13 @@ export class Queue {
 				throw new RangeError(`\`From\` can not be bigger than ${this.next.length}.`);
 
 			const tracks = this.next.splice(from, to - from);
-			if (this.repeatQueue || this.repeatSong) this.next.push(...tracks);
+			if (this.repeatQueue) this.next.push(...tracks);
 			else this.previous.push(...tracks);
 			return tracks;
 		}
 
 		const tracks = this.next.splice(from, 1);
-		if (this.repeatQueue || this.repeatSong) this.next.push(...tracks);
+		if (this.repeatQueue) this.next.push(...tracks);
 		else this.previous.push(...tracks);
 		return tracks;
 	}
@@ -144,17 +150,12 @@ export class Queue {
 	/** Gets the total duration of the queue */
 	public get duration(): number {
 		const current = this.current?.duration ?? 0;
-		return this.next.reduce((acc: number, cur: Track) => acc + (cur.duration ?? 0), current);
+		return this.next.reduce((a, b) => a + (b.duration ?? 0), current);
 	}
 
-	/** Gets the total length of the queue */
-	public get totalSize(): number {
-		return this.next.length + (this.current ? 1 : 0);
-	}
-
-	/** Gets the total length of the tracks in the next array */
+	/** Gets the total length of the queue (including Queue.current) */
 	public get size(): number {
-		return this.next.length;
+		return this.next.length + (this.current ? 1 : 0);
 	}
 
 	/** Resets the queue */

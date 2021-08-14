@@ -297,8 +297,8 @@ export class Socket {
 		}
 
 		if (payload.type === "WebSocketClosedEvent") {
-			this.manager.emit("playerConnectionClosed", { player, payload });
 			player.state = "DISCONNECTED";
+			this.manager.emit("playerConnectionClosed", { player, payload });
 			return;
 		}
 	}

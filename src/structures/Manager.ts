@@ -84,6 +84,9 @@ export class Manager extends EventEmitter {
 		}
 
 		this._nodes = nodes;
+
+		// player state is changed to DISCONNECTED when a player moves, this makes sure that the state changes when that happens
+		this.on("playerMove", ({ player }) => (player.state = "CONNECTED"));
 	}
 
 	/**
