@@ -2,6 +2,7 @@ node_modules/
 dist/
 
 docs/
+typings/
 
 yarn.lock
 yarn-error.log

@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "An easy-to-use package for interacting with Lavalink based off Erela.js & Lavaclient",
 	"main": "dist/index.js",
+	"types": "typings/index.d.ts",
 	"author": "DaanGamesDG <daan@daangamesdg.wtf>",
 	"license": "MIT",
 	"private": false,
@@ -11,6 +12,7 @@
 		"@types/ws": "^7.4.7",
 		"@typescript-eslint/eslint-plugin": "^4.28.2",
 		"@typescript-eslint/parser": "^4.28.2",
+		"dts-bundle": "^0.7.3",
 		"eslint": "^7.30.0",
 		"rimraf": "^3.0.2",
 		"typedoc": "^0.21.5",
@@ -18,11 +20,9 @@
 	},
 	"scripts": {
 		"build": "rimraf ./dist && tsc --build",
-		"dev": "nodemon --exec ts-node src/index.ts",
-		"start": "node .",
 		"lint": "eslint src",
 		"docs": "typedoc --excludeProtected --excludePrivate --excludeExternals",
-		"build-docs": "yarn run build && yarn run docs"
+		"types": "dts-bundle --removeSource --name @stereo-bot/lavalink --main ./dist --out ../typings/index.d.ts --baseDir ./dist"
 	},
 	"dependencies": {
 		"@lavaclient/types": "^2.0.8",
