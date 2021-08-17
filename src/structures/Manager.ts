@@ -290,8 +290,8 @@ export interface Manager {
 	): this;
 
 	/**
-	 * Emitted when a socket disconnects.
-	 * @event Manager#socketDisconnect
+	 * Emitted when a socket is destroyed.
+	 * @event Manager#socketDestroy
 	 */
 	on(
 		event: "socketDestroy",
