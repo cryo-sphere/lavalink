@@ -259,7 +259,8 @@ export class Socket {
 
 		if (payload.type === "TrackEndEvent") {
 			this.manager.emit("trackEnd", { player, track, payload });
-			return player.queue.nextSong();
+			if (payload.reason !== "STOPPED") player.queue.nextSong();
+			return;
 		}
 
 		if (payload.type === "TrackStuckEvent") {
