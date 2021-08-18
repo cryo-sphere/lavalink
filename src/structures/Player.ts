@@ -135,12 +135,12 @@ export class Player {
 		if (!this.queue.current) return this;
 		if (this.queue.repeatSong) return this.seek(0);
 
+		this.stop();
 		if (amount === 1) {
 			this.queue.nextSong();
 			return this;
 		}
 
-		this.stop();
 		if (!this.queue.repeatQueue && amount > this.queue.size) {
 			this.queue.reset();
 			this.manager.emit("queueEmpty", this);
