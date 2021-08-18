@@ -290,22 +290,22 @@ export class Socket {
 	 * @private
 	 */
 	private close(event: WebSocket.CloseEvent): void {
-		if (this.status === "CONNECTED")
-			this.manager.emit("socketDisconnect", { socket: this, event });
+		if (this.status === "CONNECTED") this.manager.emit("socketDisconnect", { socket: this, event });
 		if (event.code !== 1000 && event.reason !== "destroy") {
 			this.remaining -= 1;
 			if (this.remaining <= 0) {
-                		this.status = "DISCONNECTED";
-                		this.manager.emit("socketError", {
-                    		socket: this,
-                    		error: new Error("Ran out of reconnect tries"),
-                	});
-                	return;
-            	}
+				this.status = "DISCONNECTED";
+				this.manager.emit("socketError", {
+					socket: this,
+					error: new Error("Ran out of reconnect tries"),
+				});
 
-            		const amount = 5e3;
-            		const timeout = setTimeout(this.reconnect.bind(this), amount);
-            		this.reconnectTimeout = timeout;
+				return;
+			}
+
+			const amount = this.reconnectOptions?.delay ?? 15e3;
+			const timeout = setTimeout(this.reconnect.bind(this), amount);
+			this.reconnectTimeout = timeout;
 		}
 	}
 
