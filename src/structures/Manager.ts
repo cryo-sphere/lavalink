@@ -37,6 +37,8 @@ export class Manager extends EventEmitter {
 			throw new RangeError("options.send is not a function");
 		if (options.shards && (typeof options.shards !== "number" || options.shards < 1))
 			throw new RangeError("options.shards must 1 or greater");
+		if (options.playTimeout && (typeof options.playTimeout !== "number" || options.playTimeout < 1))
+			throw new RangeError("options.playTimeout must 1 or greater");
 
 		if (options.resume) {
 			if (typeof options.resume.key !== "string" || !options.resume.key)
@@ -495,6 +497,10 @@ export interface ManagerOptions {
 	 * Options for reconnection.
 	 */
 	reconnect?: reconnectOptions;
+	/**
+	 * play timeout
+	 */
+	playTimeout?: number;
 }
 
 export interface reconnectOptions {
