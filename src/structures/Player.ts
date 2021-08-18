@@ -85,14 +85,20 @@ export class Player {
 				return this.error("play", "options.startTime is not a number");
 		}
 
-		setTimeout(
-			() =>
-				this.socket.send({
-					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-					data: { op: "play", guildId: this.guild, track: this.queue.current!.track, ...options },
-				}),
-			1e3
-		);
+		if (this.manager.options.playTimeout)
+			setTimeout(
+				() =>
+					this.socket.send({
+						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+						data: { op: "play", guildId: this.guild, track: this.queue.current!.track, ...options },
+					}),
+				this.manager.options.playTimeout
+			);
+		else
+			this.socket.send({
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				data: { op: "play", guildId: this.guild, track: this.queue.current!.track, ...options },
+			});
 	}
 
 	/**
