@@ -168,26 +168,8 @@ export class Socket {
 	 * Reconnect to lavalink
 	 */
 	public reconnect(): void {
-		if (this.remaining <= 0) {
-			this.status = "DISCONNECTED";
-			this.manager.emit("socketError", {
-				socket: this,
-				error: new Error("Ran out of reconnect tries"),
-			});
-			return;
-		}
-
-		this.remaining -= 1;
 		this.status = "RECONNECTING";
-
-		try {
-			this.connect();
-		} catch (error) {
-			this.manager.emit("socketError", { socket: this, error });
-
-			const amount = this.reconnectOptions?.amount ?? 1e4;
-			this.reconnectTimeout = setTimeout(this.reconnect.bind(this), amount);
-		}
+		this.connect();
 	}
 
 	/** Destroys the socket and removes all the players connected to it */
@@ -308,9 +290,23 @@ export class Socket {
 	 * @private
 	 */
 	private close(event: WebSocket.CloseEvent): void {
-		if (this.remaining === this.reconnectOptions?.amount)
+		if (this.status === "CONNECTED")
 			this.manager.emit("socketDisconnect", { socket: this, event });
-		if (event.code !== 1000 && event.reason !== "destroy") this.reconnect();
+		if (event.code !== 1000 && event.reason !== "destroy") {
+			this.remaining -= 1;
+			if (this.remaining <= 0) {
+                		this.status = "DISCONNECTED";
+                		this.manager.emit("socketError", {
+                    		socket: this,
+                    		error: new Error("Ran out of reconnect tries"),
+                	});
+                	return;
+            	}
+
+            		const amount = 5e3;
+            		const timeout = setTimeout(this.reconnect.bind(this), amount);
+            		this.reconnectTimeout = timeout;
+		}
 	}
 
 	/**
