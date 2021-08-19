@@ -86,9 +86,6 @@ export class Manager extends EventEmitter {
 		}
 
 		this._nodes = nodes;
-
-		// player state is changed to DISCONNECTED when a player moves, this makes sure that the state changes when that happens
-		this.on("playerMove", ({ player }) => (player.state = "CONNECTED"));
 	}
 
 	/**
@@ -246,7 +243,7 @@ export class Manager extends EventEmitter {
 				newChannel: data.channel_id,
 			});
 			player.channels.voice = data.channel_id ?? null;
-			player.state = data.channel_id ? "CONNECTED" : "DISCONNECTED";
+			player.connected = data.channel_id ? true : false;
 		}
 
 		player.voiceState = state;

@@ -28,8 +28,8 @@ export class Player {
 	};
 	/** The voice options for the player */
 	public voiceOptions: VoiceOptions;
-	/** The current state of the player. */
-	public state: State = "DISCONNECTED";
+	/** If the player is connected or not. */
+	public connected: boolean;
 	/** The equalizer bands array. */
 	public bands = new Array<number>(15).fill(0.0);
 	/** The voice state object from Discord. */
@@ -58,6 +58,7 @@ export class Player {
 
 		this.volume = volume ?? 100;
 		this.guild = guild;
+		this.connected = false;
 		this.voiceOptions = { deafened: true, muted: false, ...voiceOptions };
 
 		this.queue = new (Structure.get("Queue"))(this);
@@ -223,7 +224,7 @@ export class Player {
 		});
 
 		this.channels.voice = null;
-		this.state = "DISCONNECTED";
+		this.connected = false;
 		this.pause(true);
 	}
 
@@ -241,6 +242,8 @@ export class Player {
 				self_mute: this.voiceOptions.muted,
 			},
 		});
+
+		this.connected = true;
 	}
 
 	/** Destroys the player */
@@ -248,7 +251,6 @@ export class Player {
 		this.disconnect();
 
 		this.socket.send({ priority: true, data: { op: "destroy", guildId: this.guild } });
-		this.state = "DESTROYED";
 
 		this.manager.emit("playerDestroy", this);
 		this.manager.players.delete(this.guild);
@@ -284,8 +286,6 @@ export interface PlayOptions {
 	/** Whether to not replace the track if a play payload is sent. */
 	readonly noReplace?: boolean;
 }
-
-export type State = "CONNECTED" | "DISCONNECTED" | "DESTROYED";
 
 export interface VoiceOptions {
 	deafened: boolean;
