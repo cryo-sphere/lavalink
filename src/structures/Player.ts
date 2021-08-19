@@ -241,8 +241,6 @@ export class Player {
 				self_mute: this.voiceOptions.muted,
 			},
 		});
-
-		this.state = "CONNECTED";
 	}
 
 	/** Destroys the player */
