@@ -246,7 +246,7 @@ export class Manager extends EventEmitter {
 				newChannel: data.channel_id,
 			});
 			player.channels.voice = data.channel_id;
-			player.state = "CONNECTED";
+			player.state = data.channel_id ? "CONNECTED" : "DISCONNECTED";
 		}
 
 		player.voiceState = state;
