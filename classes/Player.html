@@ -86,6 +86,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#bands" class="tsd-kind-icon">bands</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#channels" class="tsd-kind-icon">channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#connected" class="tsd-kind-icon">connected</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#filters" class="tsd-kind-icon">filters</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#guild" class="tsd-kind-icon">guild</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#manager" class="tsd-kind-icon">manager</a></li>
@@ -94,7 +95,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#position" class="tsd-kind-icon">position</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#queue" class="tsd-kind-icon">queue</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#socket" class="tsd-kind-icon">socket</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#state" class="tsd-kind-icon">state</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#voiceOptions" class="tsd-kind-icon">voice<wbr>Options</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#voiceState" class="tsd-kind-icon">voice<wbr>State</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="Player.html#volume" class="tsd-kind-icon">volume</a></li>
@@ -132,7 +132,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L38">structures/Player.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L38">structures/Player.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -171,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">bands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L34">structures/Player.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L34">structures/Player.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,7 +186,7 @@
 					<div class="tsd-signature tsd-kind-icon">channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>voice<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L25">structures/Player.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L25">structures/Player.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -207,12 +207,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="connected" class="tsd-anchor"></a>
+					<h3>connected</h3>
+					<div class="tsd-signature tsd-kind-icon">connected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L32">structures/Player.ts:32</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the player is connected or not.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="filters" class="tsd-anchor"></a>
 					<h3>filters</h3>
 					<div class="tsd-signature tsd-kind-icon">filters<span class="tsd-signature-symbol">:</span> <a href="Filters.html" class="tsd-signature-type" data-tsd-kind="Class">Filters</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L13">structures/Player.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L13">structures/Player.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -227,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">guild<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L23">structures/Player.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L23">structures/Player.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -249,7 +264,7 @@
 					<div class="tsd-signature tsd-kind-icon">paused<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L19">structures/Player.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L19">structures/Player.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -264,7 +279,7 @@
 					<div class="tsd-signature tsd-kind-icon">playing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L17">structures/Player.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L17">structures/Player.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -279,7 +294,7 @@
 					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L15">structures/Player.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L15">structures/Player.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -294,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">queue<span class="tsd-signature-symbol">:</span> <a href="Queue.html" class="tsd-signature-type" data-tsd-kind="Class">Queue</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L11">structures/Player.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L11">structures/Player.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -311,27 +326,12 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="state" class="tsd-anchor"></a>
-					<h3>state</h3>
-					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <a href="../modules.html#State" class="tsd-signature-type" data-tsd-kind="Type alias">State</a><span class="tsd-signature-symbol"> = &quot;DISCONNECTED&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L32">structures/Player.ts:32</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The current state of the player.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="voiceOptions" class="tsd-anchor"></a>
 					<h3>voice<wbr>Options</h3>
 					<div class="tsd-signature tsd-kind-icon">voice<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/VoiceOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">VoiceOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L30">structures/Player.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L30">structures/Player.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -346,7 +346,7 @@
 					<div class="tsd-signature tsd-kind-icon">voice<wbr>State<span class="tsd-signature-symbol">:</span> <a href="../interfaces/VoiceState.html" class="tsd-signature-type" data-tsd-kind="Interface">VoiceState</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L36">structures/Player.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L36">structures/Player.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -361,7 +361,7 @@
 					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L21">structures/Player.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L21">structures/Player.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -383,7 +383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L231">structures/Player.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L232">structures/Player.ts:232</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +405,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L247">structures/Player.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L250">structures/Player.ts:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -427,7 +427,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L212">structures/Player.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L213">structures/Player.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,7 +449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L170">structures/Player.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L171">structures/Player.ts:171</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,7 +480,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L72">structures/Player.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L73">structures/Player.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L110">structures/Player.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L111">structures/Player.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -547,7 +547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L188">structures/Player.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L189">structures/Player.ts:189</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -568,7 +568,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L192">structures/Player.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L193">structures/Player.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -598,7 +598,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L268">structures/Player.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L270">structures/Player.ts:270</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -628,7 +628,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L260">structures/Player.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L262">structures/Player.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -658,7 +658,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L118">structures/Player.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L119">structures/Player.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -688,7 +688,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L139">structures/Player.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L140">structures/Player.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +719,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/95920c1/src/structures/Player.ts#L129">structures/Player.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/stereo-bot/lavalink/blob/7838cce/src/structures/Player.ts#L130">structures/Player.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -758,6 +758,9 @@
 								<a href="Player.html#channels" class="tsd-kind-icon">channels</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="Player.html#connected" class="tsd-kind-icon">connected</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="Player.html#filters" class="tsd-kind-icon">filters</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -780,9 +783,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="Player.html#socket" class="tsd-kind-icon">socket</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="Player.html#state" class="tsd-kind-icon">state</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="Player.html#voiceOptions" class="tsd-kind-icon">voice<wbr>Options</a>
