@@ -237,13 +237,13 @@ export class Manager extends EventEmitter {
 		state.sessionId = data.session_id;
 
 		if (player.channels.voice !== data.channel_id) {
+			player.channels.voice = data.channel_id ?? null;
+			player.connected = data.channel_id ? true : false;
 			this.emit("playerMove", {
 				player,
 				oldChannel: player.channels.voice,
 				newChannel: data.channel_id,
 			});
-			player.channels.voice = data.channel_id ?? null;
-			player.connected = data.channel_id ? true : false;
 		}
 
 		player.voiceState = state;
