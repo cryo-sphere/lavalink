@@ -251,37 +251,29 @@ export class Socket {
 
 		const track = player.queue.current;
 
-		if (payload.type === "TrackStartEvent") {
-			player.playing = true;
-			player.paused = false;
-			this.manager.emit("trackStart", { player, track, payload });
-		}
-
-		if (payload.type === "TrackEndEvent") {
-			this.manager.emit("trackEnd", { player, track, payload });
-			if (payload.reason !== "STOPPED") player.queue.nextSong();
-			return;
-		}
-
-		if (payload.type === "TrackStuckEvent") {
-			this.manager.emit("trackStuck", { player, track, payload });
-			player.stop();
-			player.playing = false;
-			player.paused = false;
-			return;
-		}
-
-		if (payload.type === "TrackExceptionEvent") {
-			this.manager.emit("trackError", { player, track, payload });
-			player.stop();
-			player.playing = false;
-			player.paused = false;
-			return;
-		}
-
-		if (payload.type === "WebSocketClosedEvent") {
-			this.manager.emit("playerConnectionClosed", { player, payload });
-			return;
+		switch (payload.type) {
+			case "TrackStartEvent":
+				player.playing = true;
+				player.paused = false;
+				this.manager.emit("trackStart", { player, track, payload });
+				break;
+			case "TrackEndEvent":
+				this.manager.emit("trackEnd", { player, track, payload });
+				if (payload.reason !== "STOPPED") player.queue.nextSong();
+				break;
+			case "TrackExceptionEvent":
+				player.playing = false;
+				player.paused = false;
+				this.manager.emit("trackError", { player, track, payload });
+				break;
+			case "TrackStuckEvent":
+				player.playing = false;
+				player.paused = false;
+				this.manager.emit("trackStuck", { player, track, payload });
+				break;
+			case "WebSocketClosedEvent":
+				this.manager.emit("playerConnectionClosed", { player, payload });
+				break;
 		}
 	}
 
