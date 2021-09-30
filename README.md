@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-yarn add / npm install @stereo/lavalink
+yarn add / npm install @stereo-bot/lavalink
 ```
 
 ## Usage
