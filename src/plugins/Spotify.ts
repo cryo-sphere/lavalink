@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 import { Manager, SearchFunction, SearchResult } from "../structures/Manager";
 import { Plugin } from "../structures/Plugin";
 import { Track } from "../structures/Track";
@@ -92,16 +92,20 @@ export class Spotify extends Plugin {
 
 	protected async _renew(): Promise<number> {
 		const { data } = await axios
-			.post("https://accounts.spotify.com/api/token", "grant_type=client_credentials", {
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-					Authorization: `Basic ${Buffer.from(
-						`${this.options.clientId}:${this.options.clientSecret}`
-					).toString("base64")}`,
-				},
-			})
+			.post<string, AxiosResponse<SpotifyCredsResponse>>(
+				"https://accounts.spotify.com/api/token",
+				"grant_type=client_credentials",
+				{
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						Authorization: `Basic ${Buffer.from(
+							`${this.options.clientId}:${this.options.clientSecret}`
+						).toString("base64")}`,
+					},
+				}
+			)
 			.catch(() => ({ data: null }));
-		if (!data.access_token) throw new Error("Invalid Spotify client.");
+		if (!data?.access_token) throw new Error("Invalid Spotify client.");
 
 		const { access_token, expires_in } = data;
 
@@ -266,4 +270,10 @@ export interface SpotifyAPITrack {
 	external_urls: {
 		spotify: string;
 	};
+}
+
+/* == internal == */
+interface SpotifyCredsResponse {
+	access_token: string;
+	expires_in: number;
 }

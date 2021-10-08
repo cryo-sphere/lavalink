@@ -93,7 +93,7 @@ export class Socket {
 	public makeRequest<T>(endpoint: string, options?: AxiosRequestConfig): AxiosPromise<T> {
 		return axios(this.address() + endpoint, {
 			...options,
-			headers: { ...options?.headers, Authorization: this.options.password },
+			headers: { ...options?.headers, Authorization: this.options.password ?? "" },
 		});
 	}
 
