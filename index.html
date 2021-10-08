@@ -1,345 +1,44 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@stereo-bot/lavalink</title>
-	<meta name="description" content="Documentation for @stereo-bot/lavalink">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">@stereo-bot/lavalink</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<h1>@stereo-bot/lavalink</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 align="center">@stereo-bot/lavalink</h1>
-				<blockquote>
-					<p>An easy-to-use package for interacting with Lavalink with built-in Spotify and Deezer support (plugins must be added to the plugins array in-order to work). based off <a href="https://github.com/MenuDocs/erela.js">Erela.js</a> &amp; <a href="https://github.com/lavaclient">Lavaclient</a></p>
-				</blockquote>
-				<ul>
-					<li><a href="https://lavalink.stereo-bot.tk">Documentation</a></li>
-				</ul>
-				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-					<h2>Install</h2>
-				</a>
-				<pre><code class="language-sh"><span style="color: #000000">yarn add / npm install @stereo-bot/lavalink</span>
+<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>@stereo-bot/lavalink</title><meta name="description" content="Documentation for @stereo-bot/lavalink"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@stereo-bot/lavalink</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@stereo-bot/lavalink</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><h1 align="center">@stereo-bot/lavalink</h1>
+
+<blockquote>
+<p>An easy-to-use package for interacting with Lavalink with built-in Spotify and Deezer support (plugins must be added to the plugins array in-order to work). based off <a href="https://github.com/MenuDocs/erela.js">Erela.js</a> &amp; <a href="https://github.com/lavaclient">Lavaclient</a></p>
+</blockquote>
+<ul>
+<li><a href="https://lavalink.stereo-bot.tk">Documentation</a></li>
+</ul>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<pre><code class="language-sh"><span class="hl-0">yarn add / npm install @stereo-bot/lavalink</span>
 </code></pre>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
-				</a>
-				<p>Extremely simple example</p>
-				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;discord.js&quot;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Manager</span><span style="color: #000000">, </span><span style="color: #0070C1">Deezer</span><span style="color: #000000">, </span><span style="color: #0070C1">Spotify</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;@stereo/lavalink&quot;</span><span style="color: #000000">);</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Client</span><span style="color: #000000">({ </span><span style="color: #001080">intents:</span><span style="color: #000000"> [</span><span style="color: #A31515">&quot;GUILD_VOICE_STATES&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;GUILD_MESSAGES&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;GUILDS&quot;</span><span style="color: #000000">] });</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">manager</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Manager</span><span style="color: #000000">(</span><span style="color: #001080">nodes</span><span style="color: #000000">, </span><span style="color: #001080">options</span><span style="color: #000000">);</span>
-
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;ready&quot;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;ready&quot;</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">init</span><span style="color: #000000">(</span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">user</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000">);</span>
-<span style="color: #000000">});</span>
-
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_STATE_UPDATE&quot;</span><span style="color: #000000">, (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">voiceStateUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">));</span>
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_SERVER_UPDATE&quot;</span><span style="color: #000000">, (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">voiceServerUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">));</span>
-
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;messageCreate&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">message</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">content</span><span style="color: #000000">.</span><span style="color: #795E26">includes</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;-start&quot;</span><span style="color: #000000">)) {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">song</span><span style="color: #000000"> = </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">content</span><span style="color: #000000">.</span><span style="color: #795E26">replace</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;-start&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&quot;</span><span style="color: #000000">);</span>
-<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">player</span><span style="color: #000000"> = </span><span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">({ </span><span style="color: #001080">guild:</span><span style="color: #000000"> </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">guild</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000"> });</span>
-<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">song</span><span style="color: #000000"> = (</span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #795E26">search</span><span style="color: #000000">(</span><span style="color: #001080">song</span><span style="color: #000000">, </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">author</span><span style="color: #000000">.</span><span style="color: #001080">id</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;yt&quot;</span><span style="color: #000000">)).</span><span style="color: #001080">tracks</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">];</span>
-
-<span style="color: #000000">    </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (!</span><span style="color: #001080">song</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #795E26">reply</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;no song found&quot;</span><span style="color: #000000">);</span>
-
-<span style="color: #000000">        </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #001080">song</span><span style="color: #000000">);</span>
-<span style="color: #000000">        </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #795E26">setVoice</span><span style="color: #000000">(</span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">member</span><span style="color: #000000">.</span><span style="color: #001080">voice</span><span style="color: #000000">.</span><span style="color: #001080">channelId</span><span style="color: #000000">);</span>
-<span style="color: #000000">        </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #795E26">setText</span><span style="color: #000000">(</span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">channelId</span><span style="color: #000000">);</span>
-
-<span style="color: #000000">    </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #795E26">reply</span><span style="color: #000000">(</span><span style="color: #A31515">`Successfully enqueued </span><span style="color: #0000FF">${</span><span style="color: #001080">song</span><span style="color: #000000FF">.</span><span style="color: #001080">title</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
-
-<span style="color: #000000">        </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
-<span style="color: #000000">        </span><span style="color: #001080">player</span><span style="color: #000000">.</span><span style="color: #795E26">play</span><span style="color: #000000">();</span>
-
-<span style="color: #000000">    }</span>
-<span style="color: #000000">);</span>
-
-<span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;socketConnect&quot;</span><span style="color: #000000">, (</span><span style="color: #001080">socket</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Socket online: </span><span style="color: #0000FF">${</span><span style="color: #001080">socket</span><span style="color: #000000FF">.</span><span style="color: #001080">options</span><span style="color: #000000FF">.</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">));</span>
-<span style="color: #001080">manager</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;socketError&quot;</span><span style="color: #000000">, ({ </span><span style="color: #001080">socket</span><span style="color: #000000">, </span><span style="color: #001080">error</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span>
-<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Socket error (</span><span style="color: #0000FF">${</span><span style="color: #001080">socket</span><span style="color: #000000FF">.</span><span style="color: #001080">options</span><span style="color: #000000FF">.</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">): </span><span style="color: #0000FF">${</span><span style="color: #001080">error</span><span style="color: #000000FF">.</span><span style="color: #001080">message</span><span style="color: #000000FF"> </span><span style="color: #000000">??</span><span style="color: #000000FF"> </span><span style="color: #001080">error</span><span style="color: #000000FF">.</span><span style="color: #001080">stack</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">)</span>
-<span style="color: #000000">);</span>
-
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">login</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;token&quot;</span><span style="color: #000000">);</span>
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<p>Extremely simple example</p>
+<pre><code class="language-js"><span class="hl-1">const</span><span class="hl-0"> { </span><span class="hl-2">Client</span><span class="hl-0"> } = </span><span class="hl-3">require</span><span class="hl-0">(</span><span class="hl-4">&quot;discord.js&quot;</span><span class="hl-0">);</span><br/><span class="hl-1">const</span><span class="hl-0"> { </span><span class="hl-2">Manager</span><span class="hl-0">, </span><span class="hl-2">Deezer</span><span class="hl-0">, </span><span class="hl-2">Spotify</span><span class="hl-0"> } = </span><span class="hl-3">require</span><span class="hl-0">(</span><span class="hl-4">&quot;@stereo/lavalink&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">client</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Client</span><span class="hl-0">({ </span><span class="hl-5">intents:</span><span class="hl-0"> [</span><span class="hl-4">&quot;GUILD_VOICE_STATES&quot;</span><span class="hl-0">, </span><span class="hl-4">&quot;GUILD_MESSAGES&quot;</span><span class="hl-0">, </span><span class="hl-4">&quot;GUILDS&quot;</span><span class="hl-0">] });</span><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">manager</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">Manager</span><span class="hl-0">(</span><span class="hl-5">nodes</span><span class="hl-0">, </span><span class="hl-5">options</span><span class="hl-0">);</span><br/><br/><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;ready&quot;</span><span class="hl-0">, () </span><span class="hl-1">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-5">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">(</span><span class="hl-4">&quot;ready&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">    </span><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">init</span><span class="hl-0">(</span><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-5">user</span><span class="hl-0">.</span><span class="hl-5">id</span><span class="hl-0">);</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-5">ws</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;VOICE_STATE_UPDATE&quot;</span><span class="hl-0">, (</span><span class="hl-5">data</span><span class="hl-0">) </span><span class="hl-1">=&gt;</span><span class="hl-0"> </span><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">voiceStateUpdate</span><span class="hl-0">(</span><span class="hl-5">data</span><span class="hl-0">));</span><br/><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-5">ws</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;VOICE_SERVER_UPDATE&quot;</span><span class="hl-0">, (</span><span class="hl-5">data</span><span class="hl-0">) </span><span class="hl-1">=&gt;</span><span class="hl-0"> </span><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">voiceServerUpdate</span><span class="hl-0">(</span><span class="hl-5">data</span><span class="hl-0">));</span><br/><br/><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;messageCreate&quot;</span><span class="hl-0">, </span><span class="hl-1">async</span><span class="hl-0"> (</span><span class="hl-5">message</span><span class="hl-0">) </span><span class="hl-1">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">if</span><span class="hl-0"> (</span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">content</span><span class="hl-0">.</span><span class="hl-3">includes</span><span class="hl-0">(</span><span class="hl-4">&quot;-start&quot;</span><span class="hl-0">)) {</span><br/><span class="hl-0">    </span><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">song</span><span class="hl-0"> = </span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">content</span><span class="hl-0">.</span><span class="hl-3">replace</span><span class="hl-0">(</span><span class="hl-4">&quot;-start&quot;</span><span class="hl-0">, </span><span class="hl-4">&quot;&quot;</span><span class="hl-0">);</span><br/><span class="hl-0">        </span><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">player</span><span class="hl-0"> = </span><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">create</span><span class="hl-0">({ </span><span class="hl-5">guild:</span><span class="hl-0"> </span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">guild</span><span class="hl-0">.</span><span class="hl-5">id</span><span class="hl-0"> });</span><br/><span class="hl-0">        </span><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">song</span><span class="hl-0"> = (</span><span class="hl-6">await</span><span class="hl-0"> </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-3">search</span><span class="hl-0">(</span><span class="hl-5">song</span><span class="hl-0">, </span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">author</span><span class="hl-0">.</span><span class="hl-5">id</span><span class="hl-0">, </span><span class="hl-4">&quot;yt&quot;</span><span class="hl-0">)).</span><span class="hl-5">tracks</span><span class="hl-0">[</span><span class="hl-7">0</span><span class="hl-0">];</span><br/><br/><span class="hl-0">    </span><span class="hl-6">if</span><span class="hl-0"> (!</span><span class="hl-5">song</span><span class="hl-0">) </span><span class="hl-6">return</span><span class="hl-0"> </span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-3">reply</span><span class="hl-0">(</span><span class="hl-4">&quot;no song found&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-0">        </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-5">queue</span><span class="hl-0">.</span><span class="hl-3">add</span><span class="hl-0">(</span><span class="hl-5">song</span><span class="hl-0">);</span><br/><span class="hl-0">        </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-3">setVoice</span><span class="hl-0">(</span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">member</span><span class="hl-0">.</span><span class="hl-5">voice</span><span class="hl-0">.</span><span class="hl-5">channelId</span><span class="hl-0">);</span><br/><span class="hl-0">        </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-3">setText</span><span class="hl-0">(</span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-5">channelId</span><span class="hl-0">);</span><br/><br/><span class="hl-0">    </span><span class="hl-5">message</span><span class="hl-0">.</span><span class="hl-3">reply</span><span class="hl-0">(</span><span class="hl-4">`Successfully enqueued </span><span class="hl-1">${</span><span class="hl-5">song</span><span class="hl-8">.</span><span class="hl-5">title</span><span class="hl-1">}</span><span class="hl-4">`</span><span class="hl-0">);</span><br/><br/><span class="hl-0">        </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-3">connect</span><span class="hl-0">();</span><br/><span class="hl-0">        </span><span class="hl-5">player</span><span class="hl-0">.</span><span class="hl-3">play</span><span class="hl-0">();</span><br/><br/><span class="hl-0">    }</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;socketConnect&quot;</span><span class="hl-0">, (</span><span class="hl-5">socket</span><span class="hl-0">) </span><span class="hl-1">=&gt;</span><span class="hl-0"> </span><span class="hl-5">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">(</span><span class="hl-4">`Socket online: </span><span class="hl-1">${</span><span class="hl-5">socket</span><span class="hl-8">.</span><span class="hl-5">options</span><span class="hl-8">.</span><span class="hl-5">id</span><span class="hl-1">}</span><span class="hl-4">`</span><span class="hl-0">));</span><br/><span class="hl-5">manager</span><span class="hl-0">.</span><span class="hl-3">on</span><span class="hl-0">(</span><span class="hl-4">&quot;socketError&quot;</span><span class="hl-0">, ({ </span><span class="hl-5">socket</span><span class="hl-0">, </span><span class="hl-5">error</span><span class="hl-0"> }) </span><span class="hl-1">=&gt;</span><br/><span class="hl-0">    </span><span class="hl-5">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">(</span><span class="hl-4">`Socket error (</span><span class="hl-1">${</span><span class="hl-5">socket</span><span class="hl-8">.</span><span class="hl-5">options</span><span class="hl-8">.</span><span class="hl-5">id</span><span class="hl-1">}</span><span class="hl-4">): </span><span class="hl-1">${</span><span class="hl-5">error</span><span class="hl-8">.</span><span class="hl-5">message</span><span class="hl-8"> </span><span class="hl-0">??</span><span class="hl-8"> </span><span class="hl-5">error</span><span class="hl-8">.</span><span class="hl-5">stack</span><span class="hl-1">}</span><span class="hl-4">`</span><span class="hl-0">)</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-5">client</span><span class="hl-0">.</span><span class="hl-3">login</span><span class="hl-0">(</span><span class="hl-4">&quot;token&quot;</span><span class="hl-0">);</span>
 </code></pre>
-				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
-					<h2>Author</h2>
-				</a>
-				<p>👤 <strong>DaanGamesDG</strong></p>
-				<ul>
-					<li>Website: <a href="https://daangamesdg.wtf/">https://daangamesdg.wtf/</a></li>
-					<li>Email: <a href="mailto:daan@daangamesdg.wtf">daan@daangamesdg.wtf</a></li>
-					<li>Twitter: <a href="https://twitter.com/DaanGamesDG">@DaanGamesDG</a></li>
-					<li>Github: <a href="https://github.com/DaanGamesDG">@DaanGamesDG</a></li>
-				</ul>
-				<a href="#donate" id="donate" style="color: inherit; text-decoration: none;">
-					<h2>Donate</h2>
-				</a>
-				<p>This will always be open source project, even if I don&#39;t receive donations. But there are still people out there that want to donate, so if you do here is the link <a href="https://paypal.me/daangamesdg">@PayPal</a>. Thanks in advance! I really appriciate it &lt;3</p>
-				<a href="#lisence" id="lisence" style="color: inherit; text-decoration: none;">
-					<h2>Lisence</h2>
-				</a>
-				<p>Project is licensed under the © <a href="/LICENSE"><strong>MIT License</strong></a></p>
-				<hr>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/Deezer.html" class="tsd-kind-icon">Deezer</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Filters.html" class="tsd-kind-icon">Filters</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Manager.html" class="tsd-kind-icon">Manager</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Player.html" class="tsd-kind-icon">Player</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Plugin.html" class="tsd-kind-icon">Plugin</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Queue.html" class="tsd-kind-icon">Queue</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Socket.html" class="tsd-kind-icon">Socket</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Spotify.html" class="tsd-kind-icon">Spotify</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Structure.html" class="tsd-kind-icon">Structure</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Track.html" class="tsd-kind-icon">Track</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Utils.html" class="tsd-kind-icon">Utils</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPIAlbum.html" class="tsd-kind-icon">DeezerAPIAlbum</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPIArtist.html" class="tsd-kind-icon">DeezerAPIArtist</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPIContributor.html" class="tsd-kind-icon">DeezerAPIContributor</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPICreator.html" class="tsd-kind-icon">DeezerAPICreator</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPIGenres.html" class="tsd-kind-icon">DeezerAPIGenres</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPIPlaylist.html" class="tsd-kind-icon">DeezerAPIPlaylist</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerAPITrack.html" class="tsd-kind-icon">DeezerAPITrack</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/DeezerOptions.html" class="tsd-kind-icon">Deezer<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/Exception.html" class="tsd-kind-icon">Exception</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/LoadedTrack.html" class="tsd-kind-icon">Loaded<wbr>Track</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/ManagerOptions.html" class="tsd-kind-icon">Manager<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/Payload.html" class="tsd-kind-icon">Payload</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/PlayOptions.html" class="tsd-kind-icon">Play<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/PlayerEvent.html" class="tsd-kind-icon">Player<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/PlaylistTracks.html" class="tsd-kind-icon">Playlist<wbr>Tracks</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SearchResult.html" class="tsd-kind-icon">Search<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SocketOptions.html" class="tsd-kind-icon">Socket<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SpotifyAPIAlbum.html" class="tsd-kind-icon">SpotifyAPIAlbum</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SpotifyAPIAlbumTracks.html" class="tsd-kind-icon">SpotifyAPIAlbum<wbr>Tracks</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SpotifyAPIPlaylist.html" class="tsd-kind-icon">SpotifyAPIPlaylist</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SpotifyAPITrack.html" class="tsd-kind-icon">SpotifyAPITrack</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/SpotifyOptions.html" class="tsd-kind-icon">Spotify<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/TrackEndEvent.html" class="tsd-kind-icon">Track<wbr>End<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/TrackExceptionEvent.html" class="tsd-kind-icon">Track<wbr>Exception<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/TrackStartEvent.html" class="tsd-kind-icon">Track<wbr>Start<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/TrackStuckEvent.html" class="tsd-kind-icon">Track<wbr>Stuck<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/VoiceEvent.html" class="tsd-kind-icon">Voice<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/VoiceOptions.html" class="tsd-kind-icon">Voice<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/VoiceState.html" class="tsd-kind-icon">Voice<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/WebSocketClosedEvent.html" class="tsd-kind-icon">Web<wbr>Socket<wbr>Closed<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/reconnectOptions.html" class="tsd-kind-icon">reconnect<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/resumeOptions.html" class="tsd-kind-icon">resume<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/voiceServerUpdate.html" class="tsd-kind-icon">voice<wbr>Server<wbr>Update</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/voiceStateUpdate.html" class="tsd-kind-icon">voice<wbr>State<wbr>Update</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#Filter" class="tsd-kind-icon">Filter</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#LoadType" class="tsd-kind-icon">Load<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#PlayerEventType" class="tsd-kind-icon">Player<wbr>Event<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#PlayerEvents" class="tsd-kind-icon">Player<wbr>Events</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#SearchFunction" class="tsd-kind-icon">Search<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#Severity" class="tsd-kind-icon">Severity</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#Status" class="tsd-kind-icon">Status</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#TrackEndReason" class="tsd-kind-icon">Track<wbr>End<wbr>Reason</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#TrackEventParameters" class="tsd-kind-icon">Track<wbr>Event<wbr>Parameters</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#thumbnailSize" class="tsd-kind-icon">thumbnail<wbr>Size</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+
+<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+  <h2>Author</h2>
+</a>
+<p>👤 <strong>DaanGamesDG</strong></p>
+<ul>
+<li>Website: <a href="https://daangamesdg.wtf/">https://daangamesdg.wtf/</a></li>
+<li>Email: <a href="mailto:daan@daangamesdg.wtf">daan@daangamesdg.wtf</a></li>
+<li>Twitter: <a href="https://twitter.com/DaanGamesDG">@DaanGamesDG</a></li>
+<li>Github: <a href="https://github.com/DaanGamesDG">@DaanGamesDG</a></li>
+</ul>
+
+<a href="#donate" id="donate" style="color: inherit; text-decoration: none;">
+  <h2>Donate</h2>
+</a>
+<p>This will always be open source project, even if I don&#39;t receive donations. But there are still people out there that want to donate, so if you do here is the link <a href="https://paypal.me/daangamesdg">@PayPal</a>. Thanks in advance! I really appriciate it &lt;3</p>
+
+<a href="#lisence" id="lisence" style="color: inherit; text-decoration: none;">
+  <h2>Lisence</h2>
+</a>
+<p>Project is licensed under the © <a href="/LICENSE"><strong>MIT License</strong></a></p>
+<hr>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/Deezer.html" class="tsd-kind-icon">Deezer</a></li><li class="tsd-kind-class"><a href="classes/Filters.html" class="tsd-kind-icon">Filters</a></li><li class="tsd-kind-class"><a href="classes/Manager.html" class="tsd-kind-icon">Manager</a></li><li class="tsd-kind-class"><a href="classes/Player.html" class="tsd-kind-icon">Player</a></li><li class="tsd-kind-class"><a href="classes/Plugin.html" class="tsd-kind-icon">Plugin</a></li><li class="tsd-kind-class"><a href="classes/Queue.html" class="tsd-kind-icon">Queue</a></li><li class="tsd-kind-class"><a href="classes/Socket.html" class="tsd-kind-icon">Socket</a></li><li class="tsd-kind-class"><a href="classes/Spotify.html" class="tsd-kind-icon">Spotify</a></li><li class="tsd-kind-class"><a href="classes/Structure.html" class="tsd-kind-icon">Structure</a></li><li class="tsd-kind-class"><a href="classes/Track.html" class="tsd-kind-icon">Track</a></li><li class="tsd-kind-class"><a href="classes/Utils.html" class="tsd-kind-icon">Utils</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPIAlbum.html" class="tsd-kind-icon">DeezerAPIAlbum</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPIArtist.html" class="tsd-kind-icon">DeezerAPIArtist</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPIContributor.html" class="tsd-kind-icon">DeezerAPIContributor</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPICreator.html" class="tsd-kind-icon">DeezerAPICreator</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPIGenres.html" class="tsd-kind-icon">DeezerAPIGenres</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPIPlaylist.html" class="tsd-kind-icon">DeezerAPIPlaylist</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerAPITrack.html" class="tsd-kind-icon">DeezerAPITrack</a></li><li class="tsd-kind-interface"><a href="interfaces/DeezerOptions.html" class="tsd-kind-icon">Deezer<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/Exception.html" class="tsd-kind-icon">Exception</a></li><li class="tsd-kind-interface"><a href="interfaces/LoadedTrack.html" class="tsd-kind-icon">Loaded<wbr/>Track</a></li><li class="tsd-kind-interface"><a href="interfaces/ManagerOptions.html" class="tsd-kind-icon">Manager<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/Payload.html" class="tsd-kind-icon">Payload</a></li><li class="tsd-kind-interface"><a href="interfaces/PlayOptions.html" class="tsd-kind-icon">Play<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/PlayerEvent.html" class="tsd-kind-icon">Player<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/PlaylistTracks.html" class="tsd-kind-icon">Playlist<wbr/>Tracks</a></li><li class="tsd-kind-interface"><a href="interfaces/SearchResult.html" class="tsd-kind-icon">Search<wbr/>Result</a></li><li class="tsd-kind-interface"><a href="interfaces/SocketOptions.html" class="tsd-kind-icon">Socket<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/SpotifyAPIAlbum.html" class="tsd-kind-icon">SpotifyAPIAlbum</a></li><li class="tsd-kind-interface"><a href="interfaces/SpotifyAPIAlbumTracks.html" class="tsd-kind-icon">SpotifyAPIAlbum<wbr/>Tracks</a></li><li class="tsd-kind-interface"><a href="interfaces/SpotifyAPIPlaylist.html" class="tsd-kind-icon">SpotifyAPIPlaylist</a></li><li class="tsd-kind-interface"><a href="interfaces/SpotifyAPITrack.html" class="tsd-kind-icon">SpotifyAPITrack</a></li><li class="tsd-kind-interface"><a href="interfaces/SpotifyOptions.html" class="tsd-kind-icon">Spotify<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/TrackEndEvent.html" class="tsd-kind-icon">Track<wbr/>End<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/TrackExceptionEvent.html" class="tsd-kind-icon">Track<wbr/>Exception<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/TrackStartEvent.html" class="tsd-kind-icon">Track<wbr/>Start<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/TrackStuckEvent.html" class="tsd-kind-icon">Track<wbr/>Stuck<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/VoiceEvent.html" class="tsd-kind-icon">Voice<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/VoiceOptions.html" class="tsd-kind-icon">Voice<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/VoiceState.html" class="tsd-kind-icon">Voice<wbr/>State</a></li><li class="tsd-kind-interface"><a href="interfaces/WebSocketClosedEvent.html" class="tsd-kind-icon">Web<wbr/>Socket<wbr/>Closed<wbr/>Event</a></li><li class="tsd-kind-interface"><a href="interfaces/reconnectOptions.html" class="tsd-kind-icon">reconnect<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/resumeOptions.html" class="tsd-kind-icon">resume<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/voiceServerUpdate.html" class="tsd-kind-icon">voice<wbr/>Server<wbr/>Update</a></li><li class="tsd-kind-interface"><a href="interfaces/voiceStateUpdate.html" class="tsd-kind-icon">voice<wbr/>State<wbr/>Update</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Filter" class="tsd-kind-icon">Filter</a></li><li class="tsd-kind-type-alias"><a href="modules.html#LoadType" class="tsd-kind-icon">Load<wbr/>Type</a></li><li class="tsd-kind-type-alias"><a href="modules.html#PlayerEventType" class="tsd-kind-icon">Player<wbr/>Event<wbr/>Type</a></li><li class="tsd-kind-type-alias"><a href="modules.html#PlayerEvents" class="tsd-kind-icon">Player<wbr/>Events</a></li><li class="tsd-kind-type-alias"><a href="modules.html#SearchFunction" class="tsd-kind-icon">Search<wbr/>Function</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Severity" class="tsd-kind-icon">Severity</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Status" class="tsd-kind-icon">Status</a></li><li class="tsd-kind-type-alias"><a href="modules.html#TrackEndReason" class="tsd-kind-icon">Track<wbr/>End<wbr/>Reason</a></li><li class="tsd-kind-type-alias"><a href="modules.html#TrackEventParameters" class="tsd-kind-icon">Track<wbr/>Event<wbr/>Parameters</a></li><li class="tsd-kind-type-alias"><a href="modules.html#thumbnailSize" class="tsd-kind-icon">thumbnail<wbr/>Size</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
