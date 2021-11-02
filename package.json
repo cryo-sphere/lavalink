@@ -8,15 +8,15 @@
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "^16.3.1",
-		"@types/ws": "^7.4.7",
-		"@typescript-eslint/eslint-plugin": "^4.28.2",
-		"@typescript-eslint/parser": "^4.28.2",
+		"@types/node": "^16.11.6",
+		"@types/ws": "^8.2.0",
+		"@typescript-eslint/eslint-plugin": "^5.3.0",
+		"@typescript-eslint/parser": "^5.3.0",
 		"dts-bundle": "^0.7.3",
-		"eslint": "^7.30.0",
+		"eslint": "^8.1.0",
 		"rimraf": "^3.0.2",
-		"typedoc": "^0.21.5",
-		"typescript": "^4.3.5"
+		"typedoc": "^0.22.7",
+		"typescript": "^4.4.4"
 	},
 	"scripts": {
 		"build": "rimraf ./dist && tsc --build",
@@ -25,9 +25,9 @@
 		"types": "dts-bundle --removeSource --name @stereo-bot/lavalink --main ./dist --out ../typings/index.d.ts --baseDir ./dist"
 	},
 	"dependencies": {
-		"@lavaclient/types": "^2.0.8",
-		"axios": "^0.21.1",
-		"ws": "^8.1.0"
+		"@lavaclient/types": "^2.0.11",
+		"axios": "^0.24.0",
+		"ws": "^8.2.3"
 	},
 	"repository": {
 		"url": "https://github.com/stereo-bot/lavalink"

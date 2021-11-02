@@ -4,13 +4,13 @@ on:
     types: [published]
   push:
     branches:
-      - master
+      - main
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
+      - uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
       - run: yarn install
       - run: yarn docs
       - name: Publish Docs
