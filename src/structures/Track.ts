@@ -5,16 +5,18 @@ export class Track {
 	public track?: string;
 	/** The title of the track */
 	public title?: string;
+	/** The external title if any, this could be a Spotify or Deezer title for example */
+	public externalTitle?: string;
 	/** The author of the track */
 	public author?: string;
 	/** The YouTube URL of the track */
 	public uri?: string;
+	/** The external uri if any, this could be a Spotify or Deezer uri for example */
+	public externalUri?: string;
 	/** The identifier of the track */
 	public identifier?: string;
 	/** The duration of the track. */
 	public duration?: number;
-	/** The external uri if any, this is a Spotify or Deezer uri */
-	public externalUri?: string;
 	/** If the track is a stream. */
 	public isStream?: boolean;
 	/** If the track is seekable or not. */
@@ -122,19 +124,21 @@ export interface LoadedTrack {
 	readonly track: string;
 	/** The title of the track */
 	readonly title: string;
+	/** The external title if any, this could be a Spotify or Deezer title for example */
+	readonly externalTitle?: string;
 	/** The author of the track */
 	readonly author: string;
-	/** The identifier of the track */
-	readonly identifier?: string;
 	/** The YouTube URL of the track */
 	readonly uri: string;
+	/** The external uri if any, this could be a Spotify or Deezer uri for example */
+	readonly externalUri?: string;
+	/** The identifier of the track */
+	readonly identifier: string;
 	/** The duration of the track. */
 	readonly duration: number;
-	/** The external uri if any, this is a Spotify or Deezer uri */
-	readonly externalUri?: string;
 	/** If the track is a stream. */
 	readonly isStream: boolean;
-	/** If the track is a seekable or not. */
+	/** If the track is seekable or not. */
 	readonly isSeekable: boolean;
 	/** The id of the user that requested the track. */
 	readonly requester: string;

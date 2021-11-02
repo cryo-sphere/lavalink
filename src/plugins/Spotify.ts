@@ -206,6 +206,7 @@ export class Spotify extends Plugin {
 			requester,
 			title: data.name,
 			externalUri: data.external_urls.spotify,
+			externalTitle: data.name,
 			author: data.artists[0].name,
 			duration: data.duration_ms,
 		});
