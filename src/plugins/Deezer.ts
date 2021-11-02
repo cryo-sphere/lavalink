@@ -134,7 +134,7 @@ export class Deezer extends Plugin {
 		const track = new (Structure.get("Track"))({
 			requester,
 			title: data.title,
-			externalTitle: data.title
+			externalTitle: data.title,
 			externalUri: data.link,
 			author: data.artist.name,
 			duration: data.duration * 1e3,
