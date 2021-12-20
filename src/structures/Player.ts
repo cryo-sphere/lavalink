@@ -120,6 +120,7 @@ export class Player {
 		if (typeof volume !== "number" || volume > 1000 || volume < 1)
 			this.error("id", "volume must be between 1 and 1000");
 
+		this.volume = volume;
 		this.socket.send({ data: { op: "volume", guildId: this.guild, volume } });
 		return this;
 	}
