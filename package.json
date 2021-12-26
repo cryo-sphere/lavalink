@@ -8,10 +8,10 @@
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "^16.11.14",
+		"@types/node": "^16.11.17",
 		"@types/ws": "^8.2.2",
-		"@typescript-eslint/eslint-plugin": "^5.7.0",
-		"@typescript-eslint/parser": "^5.7.0",
+		"@typescript-eslint/eslint-plugin": "^5.8.0",
+		"@typescript-eslint/parser": "^5.8.0",
 		"dts-bundle": "^0.7.3",
 		"eslint": "^8.5.0",
 		"rimraf": "^3.0.2",
@@ -27,7 +27,7 @@
 	"dependencies": {
 		"@lavaclient/types": "^2.0.11",
 		"axios": "^0.24.0",
-		"ws": "^8.3.0"
+		"ws": "^8.4.0"
 	},
 	"repository": {
 		"url": "https://github.com/stereo-bot/lavalink"
