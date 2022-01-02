@@ -10,10 +10,10 @@
 	"devDependencies": {
 		"@types/node": "^16.11.17",
 		"@types/ws": "^8.2.2",
-		"@typescript-eslint/eslint-plugin": "^5.8.0",
-		"@typescript-eslint/parser": "^5.8.0",
+		"@typescript-eslint/eslint-plugin": "^5.8.1",
+		"@typescript-eslint/parser": "^5.8.1",
 		"dts-bundle": "^0.7.3",
-		"eslint": "^8.5.0",
+		"eslint": "^8.6.0",
 		"rimraf": "^3.0.2",
 		"typedoc": "^0.22.10",
 		"typescript": "^4.5.4"
