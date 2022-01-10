@@ -8,10 +8,10 @@
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
-		"@types/node": "^16.11.17",
+		"@types/node": "^16.11.19",
 		"@types/ws": "^8.2.2",
-		"@typescript-eslint/eslint-plugin": "^5.8.1",
-		"@typescript-eslint/parser": "^5.8.1",
+		"@typescript-eslint/eslint-plugin": "^5.9.1",
+		"@typescript-eslint/parser": "^5.9.1",
 		"dts-bundle": "^0.7.3",
 		"eslint": "^8.6.0",
 		"rimraf": "^3.0.2",
