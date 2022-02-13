@@ -37,13 +37,15 @@ export class Queue {
 	 * @param boolean defaults to the opposite of this.repeatQueue
 	 */
 	public setRepeatQueue(boolean = !this.repeatQueue): void {
+		const oldPlayer = { ...this.player };
 		if (boolean) {
 			this.repeatSong = false;
 			this.repeatQueue = true;
-			return;
+		} else {
+			this.repeatQueue = boolean;
 		}
 
-		this.repeatQueue = boolean;
+		this.player.manager.emit("playerUpdate", { oldPlayer, newPlayer: this.player });
 	}
 
 	/**

@@ -120,8 +120,10 @@ export class Player {
 		if (typeof volume !== "number" || volume > 1000 || volume < 1)
 			this.error("id", "volume must be between 1 and 1000");
 
+		const oldPlayer = { ...this };
 		this.volume = volume;
 		this.socket.send({ data: { op: "volume", guildId: this.guild, volume } });
+		this.manager.emit("playerUpdate", { oldPlayer, newPlayer: this });
 		return this;
 	}
 
@@ -130,7 +132,11 @@ export class Player {
 	 */
 	public stop(): this {
 		this.socket.send({ data: { op: "stop", guildId: this.guild } });
+
+		const oldPlayer = { ...this };
 		this.playing = false;
+
+		this.manager.emit("playerUpdate", { oldPlayer, newPlayer: this });
 		return this;
 	}
 
@@ -173,6 +179,7 @@ export class Player {
 		if (this.paused === pause) return this;
 
 		this.socket.send({ data: { op: "pause", guildId: this.guild, pause } });
+		const oldPlayer = { ...this };
 		if (pause) {
 			this.paused = true;
 			this.playing = false;
@@ -181,6 +188,7 @@ export class Player {
 			this.playing = true;
 		}
 
+		this.manager.emit("playerUpdate", { oldPlayer, newPlayer: this });
 		return this;
 	}
 
@@ -198,6 +206,10 @@ export class Player {
 		let parsed = typeof input === "number" ? input : Utils.convert(input);
 		if (parsed < 0) parsed = 0;
 
+		this.manager.emit("playerUpdate", {
+			oldPlayer: this,
+			newPlayer: { ...this, position: parsed },
+		});
 		this.position = parsed;
 		this.socket.send({
 			data: {
@@ -224,8 +236,14 @@ export class Player {
 			},
 		});
 
+		const oldPlayer = { ...this };
 		this.channels.voice = null;
 		this.connected = false;
+
+		this.manager.emit("playerUpdate", {
+			oldPlayer,
+			newPlayer: this,
+		});
 		this.pause(true);
 	}
 
@@ -244,7 +262,9 @@ export class Player {
 			},
 		});
 
+		const oldPlayer = { ...this };
 		this.connected = true;
+		this.manager.emit("playerUpdate", { oldPlayer, newPlayer: this });
 	}
 
 	/** Destroys the player */

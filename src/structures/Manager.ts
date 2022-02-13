@@ -415,6 +415,15 @@ export interface Manager {
 			newChannel: string;
 		}) => void
 	): this;
+
+	/**
+	 * Emitted when a player update has been received
+	 * @event Manager#playerUpdate
+	 */
+	on(
+		event: "playerUpdate",
+		listener: ({ oldPlayer, newPlayer }: { oldPlayer: Player; newPlayer: Player }) => void
+	): this;
 }
 
 export type SearchFunction = (
