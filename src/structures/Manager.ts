@@ -13,6 +13,7 @@ import {
 	TrackEndEvent,
 } from "@lavaclient/types";
 import { Utils } from "./Utils";
+import { Queue } from "..";
 
 /** The Manager is the main class for interacting with Lavalink */
 export class Manager extends EventEmitter {
@@ -423,6 +424,14 @@ export interface Manager {
 	on(
 		event: "playerUpdate",
 		listener: ({ oldPlayer, newPlayer }: { oldPlayer: Player; newPlayer: Player }) => void
+	): this;
+	/**
+	 * Emitted when a player update has been received
+	 * @event Manager#queueUpdate
+	 */
+	on(
+		event: "queueUpdate",
+		listener: ({ oldQueue, newQueue }: { oldQueue: Queue; newQueue: Queue }) => void
 	): this;
 }
 

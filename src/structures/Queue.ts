@@ -89,6 +89,7 @@ export class Queue {
 	 */
 	public add(...tracks: Track[]): void;
 	public add(...tracks: (Track | number)[]): void {
+		const oldQueue = { ...this };
 		if (typeof tracks[0] === "number") {
 			const offset = tracks.shift() as number;
 			const valid: Track[] = [];
@@ -100,6 +101,7 @@ export class Queue {
 			}
 
 			this.next.splice(offset, 0, ...valid);
+			this.player.manager.emit("queueUpdate", { oldQueue, newQueue: this });
 			return;
 		}
 
@@ -109,6 +111,7 @@ export class Queue {
 			this.next.push(track);
 		}
 
+		this.player.manager.emit("queueUpdate", { oldQueue, newQueue: this });
 		if (!this.current) this.current = (this.next.shift() as LoadedTrack) ?? null;
 	}
 
@@ -125,6 +128,8 @@ export class Queue {
 	public remove(from: number, to: number): Track[];
 	public remove(from = 0, to?: number): Track[] {
 		if (!this.size) return [];
+
+		const oldQueue = { ...this };
 		if (this.repeatSong) {
 			this.player.seek(0);
 			return this.current ? [this.current] : [];
@@ -140,12 +145,16 @@ export class Queue {
 			const tracks = this.next.splice(from, to - from);
 			if (this.repeatQueue) this.next.push(...tracks);
 			else this.previous.push(...tracks);
+
+			this.player.manager.emit("queueUpdate", { oldQueue, newQueue: this });
 			return tracks;
 		}
 
 		const tracks = this.next.splice(from, 1);
 		if (this.repeatQueue) this.next.push(...tracks);
 		else this.previous.push(...tracks);
+
+		this.player.manager.emit("queueUpdate", { oldQueue, newQueue: this });
 		return tracks;
 	}
 
