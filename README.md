@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://cdn.stereo-bot.tk/branding/logo.png" width="100px" />
+  <img src="https://cdn.stereo-bot.xyz/branding/logo.png" width="100px" />
   <h1 align="center">@stereo-bot/lavalink</h1>
   
   An easy-to-use package for interacting with Lavalink with built-in Spotify and Deezer support (plugins must be added to the plugins array in-order to work). based off [Erela.js](https://github.com/MenuDocs/erela.js) & [Lavaclient](https://github.com/lavaclient)
@@ -9,15 +9,15 @@
     <a href="/LICENSE" target="_blank">
       <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     </a>
-    <a href="https://translate.stereo-bot.tk/project/stereo" target="_blank">
+    <a href="https://translate.stereo-bot.xyz/project/stereo" target="_blank">
       <img alt="Localized: Crowdin" src="https://badges.crowdin.net/stereo/localized.svg" />
     </a>
-      <a href="https://stereo-bot.tk/discord" target="_blank">
+      <a href="https://stereo-bot.xyz/discord" target="_blank">
       <img alt="Discord" src="https://img.shields.io/badge/-Discord-5865F2?logo=discord&logoColor=fff" />
     </a>
   </p>
 
-  <a href="https://stereo-bot.tk/discord" target="_blank">
+  <a href="https://stereo-bot.xyz/discord" target="_blank">
     <img src="https://discord.com/api/guilds/743145077206941747/embed.png?style=banner2" />
   </a>
 </div>
@@ -30,7 +30,7 @@
 yarn add / npm install @stereo-bot/lavalink
 ```
 
-- [Documentation](https://lavalink.stereo-bot.tk)
+- [Documentation](https://lavalink.stereo-bot.xyz)
 
 ## Usage
 
